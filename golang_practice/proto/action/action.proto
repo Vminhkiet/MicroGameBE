@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package action;
+
+option go_package = "pkg/packets/action";
+
+enum ActionType {
+    NONE = 0;
+    ATTACK = 1;
+    ULTI = 2;
+    SPELL = 3;
+}
+
+message SpellCast {
+    int32 spellId = 1;
+}
+
+message Player_Action {
+    uint32 playerId = 1;
+
+    float moveX = 2;
+    float moveY = 3;
+    float dirX = 4;
+    float dirY = 5;
+
+    oneof combatAction {
+        bool isAttacking = 6;
+        bool isUsingUlti = 7;
+        SpellCast spellCast = 8;
+    }
+
+    int32 tick = 9;
+}

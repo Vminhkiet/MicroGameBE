@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package game;
+
+option go_package = "pkg/packets/game";
+
+message GameStateUpdate {
+    repeated PlayerState players = 1;
+    int32 tick = 4;
+}
+
+enum CombatActionType {
+    NONE = 0;
+    ATTACK = 1;
+    ULTI = 2;
+    SPELL = 3;
+}
+
+message PlayerState {
+    uint32 playerId = 1;
+
+    float x = 2;
+    float y = 3;
+    float z = 4;
+
+    float moveX = 5;
+    float moveY = 6;
+    float dirX = 7;
+    float dirY = 8;
+
+    oneof combatState {
+        bool isAttacking = 9;
+        bool isUsingUlti = 10;
+        int32 spellId = 11;
+    }
+
+    int32 tick = 12;
+}
+

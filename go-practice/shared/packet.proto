@@ -1,0 +1,4 @@
+syntax = "proto3";
+
+package packet;
+option go_

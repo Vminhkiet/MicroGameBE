@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package action;
+
+option go_package = "pkg/packets/action";
+
+message PlayerAction {
+    uint32 playerId = 1;
+    float x = 2;
+    float y = 3;
+    float z = 4;
+
+    float moveX = 5;
+    float moveY = 6;
+
+    float dirX_Attack = 7;
+    float dirY_Attack = 8;
+
+    bool attack = 9;
+    int32 phaser = 10;
+
+    bool isUlt = 11;
+
+    int32 tick = 12;
+}

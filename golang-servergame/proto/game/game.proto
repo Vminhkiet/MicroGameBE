@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package game;
+option go_package = "pkg/proto/game";
+
+message GameStateUpdate {
+  int32 tick = 1;
+  repeated PlayerState players = 2;
+}
+
+message PlayerState {
+  uint32 playerId = 1;
+  float x = 2;
+  float y = 3;
+  int32 hp = 4;
+  bool isDead = 5;
+}

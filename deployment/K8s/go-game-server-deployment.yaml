@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-game-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-game-server
+  template:
+    metadata:
+      labels:
+        app: go-game-server
+    spec:
+      containers:
+        - name: game-server
+          image: vmkiet/go-game-server:latest
+          ports:
+            - containerPort: 8080
+              protocol: UDP
+---

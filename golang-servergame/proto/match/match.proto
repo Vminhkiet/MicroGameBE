@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package match;
+
+option go_package = "pkg/packets/match";
+
+message JoinMatchRequest {
+    uint32 playerId = 1;
+    string nickname = 2;
+}
+
+message JoinMatchResponse {
+    string matchId = 1;
+    uint32 yourPlayerId = 2;
+    repeated PlayerInfo players = 3;
+}
+
+message PlayerInfo {
+    uint32 playerId = 1;
+    string nickname = 2;
+    uint32 team = 4;
+}

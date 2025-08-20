@@ -1,0 +1,19 @@
+// shared/envelope.proto
+syntax = "proto3";
+
+package shared;
+
+option go_package = "pkg/packets/shared";
+
+enum PacketType {
+    UNKNOWN = 0;
+    PLAYER_ACTION = 1;
+    GAME_STATE_UPDATE = 2;
+    JOIN_MATCH_REQUEST = 3;
+    PING_REQUEST = 4;
+}
+
+message Envelope {
+    PacketType type = 1;
+    bytes payload = 2;
+}

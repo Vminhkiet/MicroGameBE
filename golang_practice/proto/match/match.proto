@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package match;
+
+option go_package = "pkg/packets/match";
+
+message JoinMatchRequest {
+    uint32 playerId = 1;
+}

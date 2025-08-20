@@ -1,0 +1,24 @@
+version: '3'
+services:
+  udp-server:
+    image: game-server
+    container_name: udp-server
+    ports:
+      - "9999:9999/udp"
+    networks:
+      - game-net
+
+  game-client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    networks:
+      - game-net
+    depends_on:
+      - udp-server
+    deploy:
+      replicas: 20  # Tăng số lượng client ở đây
+
+networks:
+  game-net:
+    driver: bridge
