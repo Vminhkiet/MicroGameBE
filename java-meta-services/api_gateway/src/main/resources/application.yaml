@@ -11,15 +11,23 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: auth-service
+        - id: auth-service-auth
           uri: lb://auth-service
           predicates:
             - Path=/api/auth/**
+
+        - id: auth-service-user
+          uri: lb://auth-service
+          predicates:
             - Path=/api/user/**
     loadbalancer:
       ribbon:
         enabled: false
-
+app:
+  security:
+    public-endpoints:
+      - /api/auth/**
+      - /api/user/**
 eureka:
   instance:
     prefer-ip-address: true
@@ -31,4 +39,7 @@ eureka:
 
 logging:
   level:
-    com.netflix.discovery: DEBUG
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.netty.http.client: DEBUG
