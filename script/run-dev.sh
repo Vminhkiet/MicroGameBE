@@ -39,7 +39,7 @@ echo "✅ PostgreSQL is ready!"
 # BƯỚC 3: CHẠY SPRING BOOT AUTH SERVICE
 # ----------------------------------------------------------------------
 echo "🚀 Running Spring Boot application..."
-cd java-meta-services/auth-service
+cd java-meta-services/auth_service
 
 echo "🔨 Building Spring Boot application..."
 mvn clean package -DskipTests

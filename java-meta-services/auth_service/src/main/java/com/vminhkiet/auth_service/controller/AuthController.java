@@ -13,7 +13,6 @@ import com.vminhkiet.auth_service.serviceImpl.UserService;
 import com.vminhkiet.auth_service.dto.AuthResponse;
 import com.vminhkiet.auth_service.dto.LoginRequest;
 import com.vminhkiet.auth_service.dto.RefreshTokenRequest;
-import com.vminhkiet.auth_service.model.Role;
 
 @RestController
 @RequestMapping("api/auth")

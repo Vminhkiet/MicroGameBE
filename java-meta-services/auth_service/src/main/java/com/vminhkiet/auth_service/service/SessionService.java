@@ -1,6 +1,5 @@
 package com.vminhkiet.auth_service.service;
 
-import com.vminhkiet.auth_service.model.UserSession;
 import com.vminhkiet.auth_service.dto.AuthResponse;
 
 public interface SessionService {

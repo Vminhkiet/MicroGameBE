@@ -2,7 +2,6 @@ package com.vminhkiet.auth_service.serviceImpl;
 
 import java.util.concurrent.TimeUnit;
 import java.time.Instant;
-import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;

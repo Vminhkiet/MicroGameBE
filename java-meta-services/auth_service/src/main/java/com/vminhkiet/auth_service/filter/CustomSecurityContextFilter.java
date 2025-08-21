@@ -1,7 +1,6 @@
 package com.vminhkiet.auth_service.filter;
 
 import java.io.IOException;
-import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
